@@ -1,0 +1,11 @@
+git init
+git add .
+git commit -m "mensaje"
+git status
+git log
+git log -stat
+git chekout id9ir932f9230
+git reset HEAD or --hard or --soft
+git rm --cache or --force File
+git show
+git diff
