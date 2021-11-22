@@ -1,1 +1,0 @@
-En la carpeta dev se encuentran los comandos
