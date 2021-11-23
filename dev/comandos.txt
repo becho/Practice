@@ -9,3 +9,9 @@ git reset HEAD or --hard or --soft
 git rm --cache or --force File
 git show
 git diff
+git remote add origin URL
+git remote
+git remote -v
+git push origin master
+git pull origin main
+git pull origin main --allow-unrelated-histories
