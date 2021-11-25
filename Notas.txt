@@ -1,0 +1,1 @@
+# No es recomendable subir archivos binarios al repositorio.
