@@ -16,3 +16,11 @@ git push origin master
 git pull origin main
 git pull origin main --allow-unrelated-histories
 git remote set-url origin URL_SSH_REMOTO
+git log --all --graph --decorate --oneline
+alias arbolito "git log --all --graph --decorate --oneline"
+git tag -a v0.1 -m "Versionado" id8fuf5
+git tag
+git show-ref --tags
+git push origin --tags
+git tag -d v0.1
+git push origin :refs/tags/v0.1
