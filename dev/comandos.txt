@@ -11,7 +11,7 @@ git log
 #Muestra estadisticas de los cambios realizados en cada commit
 git log --stat
 #Cambia el HEAD o puntero al ID del commit indicado
-git chekout id9ir932f9230
+git checkout id9ir932f9230
 #HEAD: Saca archivos del area de Staging, no los borra
 #hard: Borra todo, absolutamente todo.
 #Soft: Borra todo el historial y registros del git, pero guarda el los cambios
@@ -55,3 +55,11 @@ git push origin --tags
 git tag -d v0.1
 #Borra el tag especifico del repositorio remoto
 git push origin :refs/tags/v0.1
+#Nos permite cambiar de branch
+git checkout rama
+#Lista las ramas disponibles
+git branch
+#Nos muestra las ramas con sus historias
+git show-branch --all
+#Enviamos nuestra rama al repositorio remoto
+git push origin rama
