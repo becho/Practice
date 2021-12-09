@@ -25,6 +25,11 @@ git rm --cached or --forced File
 git show
 #Muestra las diferencias entre el archivo actual y el ultimo commit.
 git diff
+#Generamos una clave SSH
+ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
+#Comprobar el proceso de creacion SSH y agregarlo en Windows 
+eval $(ssh-agent - s)
+ssh-add ~/.ssh/id_rsa
 #Agrega un repositorio remoto para poder accederlo localmente.
 git remote add origin URL
 #Muestra los repositorios remotos accesibles actualmente
