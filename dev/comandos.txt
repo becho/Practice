@@ -1,5 +1,11 @@
 #Inicializa un directorio para utilizarlo de repositorio local
 git init
+#Verificamos la configuracion actual
+git config -l
+#Modificamos el email
+git config --global -user.email "youremail@example.com"
+#Para modificar el usuario 
+git config --global -user.name "yourusername"
 #Agrega al area de staging los cambios realizados en el directorio 
 git add .
 #Agrega al repositorio local los cambios del listos en el area de staging
@@ -32,6 +38,10 @@ eval $(ssh-agent - s)
 ssh-add ~/.ssh/id_rsa
 #Agrega un repositorio remoto para poder accederlo localmente.
 git remote add origin URL
+#Agrega un repositorio remoto para mantener actualizado el fork.
+git remote add upstream URL
+git pull upstream master
+git push origin master
 #Muestra los repositorios remotos accesibles actualmente
 git remote
 #Muestra la ruta de los repositorios remotos disponibles
