@@ -70,6 +70,10 @@ git push origin --tags
 git tag -d v0.1
 #Borra el tag especifico del repositorio remoto
 git push origin :refs/tags/v0.1
+#Crear una rama
+git branch nombreRama
+#Borrar una rama
+git branch -D nombreRama
 #Nos permite cambiar de branch
 git checkout rama
 #Lista las ramas disponibles
@@ -78,3 +82,21 @@ git branch
 git show-branch --all
 #Enviamos nuestra rama al repositorio remoto
 git push origin rama
+#Rebase. Nos permite cambiar la historia del commit, reorganizar el trabajo realizado, solo usarlo de manera local
+git rebase nombreRamaExperimental
+git rebase master
+#Mostrar graficamente la historia de los commits
+gitk
+#Stash. Para agregar comandos al stash
+git stash
+#Stash es una lista d eestados que nos permite guardar cambios para despues.
+#Stash. Podemos agregar mensajes al stash para poder identificarlos
+git stash save "mensaje asociado al stash"
+#Stash se comporta como un stack de datos de manera LIFO. Pop recupera el ultimo estado del stashed
+git stash pop
+#Stash. Listado de elementos del stash
+git stash list
+#Crear una rama con el stash
+git stash branch <nombre de rama>
+#Eliminar el elemento mas reciente del stash
+git stash drop
