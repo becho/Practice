@@ -82,14 +82,17 @@ git branch
 git show-branch --all
 #Enviamos nuestra rama al repositorio remoto
 git push origin rama
-#Rebase. Nos permite cambiar la historia del commit, reorganizar el trabajo realizado, solo usarlo de manera local
+#Rebase. Nos permite cambiar la historia del commit de una rama
+#Reorganizar el trabajo realizado, solo usarlo de manera local
+#Primero siempre realizarlo en la rama que va a desaparecer o experimental, luego en la rama principal
 git rebase nombreRamaExperimental
 git rebase master
 #Mostrar graficamente la historia de los commits
 gitk
-#Stash. Para agregar comandos al stash
+#Stash. Para agregar cambios a un lugar temporal denominado stash
+#Su uso es tipico cuando estamos modificando algo y no queremos guardar los cambios
 git stash
-#Stash es una lista d eestados que nos permite guardar cambios para despues.
+#Stash es una lista de estados que nos permite guardar cambios para despues.
 #Stash. Podemos agregar mensajes al stash para poder identificarlos
 git stash save "mensaje asociado al stash"
 #Stash se comporta como un stack de datos de manera LIFO. Pop recupera el ultimo estado del stashed
@@ -100,3 +103,28 @@ git stash list
 git stash branch <nombre de rama>
 #Eliminar el elemento mas reciente del stash
 git stash drop
+#Clean. Archivos que son parte de tu proyecto pero no deberias agregar, o que quieres borrar.
+#Se exeptuan los archivos contenidos en el archivo .gitignore
+#--dry-run lista los archivos que va a borrar, pero no los borra aun.
+git clean --dry-run
+#Para borrarlos ejecutamos el comando con el parametro -f
+git clean -f
+#Cherry-pick. Cuando necesitamos un avance de una de las ramas en la rama principal
+git checkout rama #nos ubicamos en la rama y ejecutamos el siguiente comando para buscar el commit
+git log -oneline  #para listar y encontrar cual fue es el commit que nos interesa
+git cherry-pick <commit_id>
+#amend. Lo que hace es remendar el ultimo commit realizado en caso de que nos haya faltado algo.
+#Debemos de anhadir el cambio con add necesariamente luego se realiza el commit.
+git add <File or Path>
+git commit --amend
+#Git Reset y Reflog. Usese en caso de emergencia.
+git reflog   #Aqui encontramos el hash como la posicion del head a lo largo del tiempo
+             #Buscamos el ultimo hash donde funcionaba correctamente
+git reset --HARD <id_hash>
+#Buscar en archivos y commits de git con grep y log
+git grep -n <palabra>   #-n para saber en que linea utilice la palabra
+git grep -c <palabra>   #-c para saber cuantas veces utilice la palabra
+git log -S <palabra>    #Nos muestra todas veces que use la palabra en los commits
+
+
+
