@@ -125,6 +125,14 @@ git reset --HARD <id_hash>
 git grep -n <palabra>   #-n para saber en que linea utilice la palabra
 git grep -c <palabra>   #-c para saber cuantas veces utilice la palabra
 git log -S <palabra>    #Nos muestra todas veces que use la palabra en los commits
+#Ver cuantos commits se realizaron por usuario
+git shortlog -sn --all --no-merges
+#Visualizar las ramas remotas
+git branch -r
+#Visualizar todas las ramas
+git branch -a
+#Help del comando
+git <comando> --help
 
 
 
